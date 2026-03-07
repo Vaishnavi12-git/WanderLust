@@ -1,0 +1,17 @@
+{
+  "name": "wanderlust",
+  "version": "1.0.0",
+  "description": "Full-stack Airbnb-style web application for discovering and listing travel stays. Built with Node.js, Express, MongoDB and EJS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^5.0.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.4"
+  }
+}
