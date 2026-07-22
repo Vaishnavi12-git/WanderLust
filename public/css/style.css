@@ -114,3 +114,10 @@ body {
     max-height: 250px;
     border-radius: 12px;
 }
+
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 20px;
+}
