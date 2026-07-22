@@ -18,10 +18,8 @@ const initDB = async () => {
         owner: "6a5a08dc59e6310e0982c8be",
     }));
     await Listing.insertMany(initData.data);
-    console.log("Data inserted");
+    console.log("Data initialized");
 
 }
-
-
 
 initDB();
