@@ -1,14 +1,19 @@
-const map = L.map('map').setView([18.5204, 73.8567], 13);
+const coordinates = [
+    listing.geometry.coordinates[1], // latitude
+    listing.geometry.coordinates[0], // longitude
+];
+
+const map = L.map("map").setView(coordinates, 13);
 
 L.tileLayer(
-    'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+    "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
     {
-        maxZoom:19,
-        attribution:'&copy; OpenStreetMap contributors'
+        maxZoom: 19,
+        attribution: "&copy; OpenStreetMap contributors"
     }
 ).addTo(map);
 
-L.marker([18.5204,73.8567])
-.addTo(map)
-.bindPopup("Pune")
-.openPopup();
+L.marker(coordinates)
+    .addTo(map)
+    .bindPopup(`<b>${listing.title}</b><br>${listing.location}`)
+    .openPopup();

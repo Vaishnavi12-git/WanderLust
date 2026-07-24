@@ -74,9 +74,9 @@ app.use("/listings/:id/reviews", reviewsRouter);
 app.use("/", userRouter);
 
 
-app.get("/", (req, res) => {
-    res.send("Port working");
-});
+// app.get("/", (req, res) => {
+//     res.send("Port working");
+// });
 
 app.use((req, res, next) => {
     next(new ExpressError(404, "Page not found!"));

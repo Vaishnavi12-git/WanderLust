@@ -2,6 +2,10 @@
 <div class="row mt-3">
  <div class="col-8 offset-2">
     <% layout("/layouts/boilerplate") %>
+    <script>
+             const listing = <%- JSON.stringify(listing) %>;
+    </script>
+
     <div class="col-8 offset-2">
         <h3><%=listing.title %></h3>
     </div>
