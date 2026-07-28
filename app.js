@@ -2,6 +2,11 @@ if(process.env.NODE_ENV != "production") {
     require("dotenv").config();
 }
 
+// Fix for Windows DNS SRV resolution issue with MongoDB Atlas
+const dns = require("node:dns");
+// Use Cloudflare and Google DNS
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
+
 
 const express = require("express");
 const app = express();
@@ -10,6 +15,7 @@ const ejs = require("ejs");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
+const ExpressError = require("./utils/ExpressError");
 const { error } = require("console");
 const session = require("express-session");
 const flash = require("connect-flash");
@@ -22,6 +28,8 @@ const listingsRouter = require("./routes/listing.js");
 const reviewsRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
+const dbUrl = process.env.ATLASDB_URL;
+
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -30,15 +38,33 @@ app.use(methodOverride("_method"));
 app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
-main().then(() => {
-    console.log("Connected");
-}).catch((err) => {
-    console.log(err)
-});
-
 async function main() {
-    await mongoose.connect("mongodb://127.0.0.1:27017/wanderlust");
+    await mongoose.connect(dbUrl);
+
+    console.log("Connected!");
+    console.log("Ready State:", mongoose.connection.readyState);
+
+    mongoose.connection.on("connected", () => {
+        console.log("Mongoose connected");
+    });
+
+    mongoose.connection.on("error", (err) => {
+        console.log("Mongo Error:", err);
+    });
+
+    mongoose.connection.on("disconnected", () => {
+        console.log("Disconnected");
+    });
 }
+
+main()
+    .then(() => {
+        console.log("Database Connected Successfully");
+    })
+    .catch((err) => {
+        console.log("Connection Failed");
+        console.log(err);
+    });
 
 const sessionOptions = {
     secret: "mysupersecret",

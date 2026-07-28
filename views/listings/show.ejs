@@ -80,16 +80,19 @@
                         <p class="starability-result card-text" data-rating=<%= review.rating %>></p>
                         <p class="card-text"><%= review.comment %></p>
                      </div>
-                     <form class="mb-3" method="Post" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+                     <form class="mb-3" method="Post" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">         
                         <button class="btn btn-dark btn-sm">Delete</button>
                      </form>
+                    
                    </div>
           <% } %>
            </div> 
            <% } %>
     </div>
 </div>
-    <div class="col-6 offset-3 mb-3">
+    <div class="col-6 offset-3 mb-5">
         <h3>Where you'll be</h3>
         <div id="map"></div>
     </div>
+</div>
+</div>

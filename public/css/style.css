@@ -121,3 +121,61 @@ body {
     border-radius: 15px;
     margin-top: 20px;
 }
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.filter {
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    opacity: 0.7;
+}
+
+.filter:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.filter p {
+    font-size: 0.8rem;
+}
+
+.tax-info {
+    display: none;
+}
+
+.tax-toggle {
+    border: 1px solid black;
+    border-radius: 1rem;
+    height: 3.2rem;
+    padding: 1rem;
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+button.btn-search {
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0 1rem 0 1rem;
+}
+
+button.btn-search:hover {
+    background-color: #fe424d;
+    color: #fff;
+}
+
+.search-inp {
+    border-radius: 25px !important;
+    padding: 0.3rem 5rem 0.3rem 5rem !important;
+}
