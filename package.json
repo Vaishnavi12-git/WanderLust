@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "20.20.2"
+  },
   "name": "wanderlust",
   "version": "1.0.0",
   "description": "Full-stack Airbnb-style web application for discovering and listing travel stays. Built with Node.js, Express, MongoDB and EJS.",
@@ -13,6 +16,7 @@
     "axios": "^1.18.1",
     "cloudinary": "^1.41.3",
     "connect-flash": "^0.1.1",
+    "connect-mongo": "^6.0.0",
     "dotenv": "^17.4.2",
     "ejs": "^5.0.1",
     "ejs-mate": "^4.0.0",
