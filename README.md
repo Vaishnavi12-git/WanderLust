@@ -136,19 +136,19 @@ nodemon app.js
 
 ### Home Page
 
-![Home Page] (assets/screenshots/home-page.png)
+![Home Page](assets/screenshots/home-page.png)
 
 ### Listing Details
 
-! [Listing Details] (assets/screenshots/listing-details.png)
+![Listing Details](assets/screenshots/listing-details.png)
 
 ### Create Listing
 
-! [Create Listing] (assets//screenshots/create-listing.png)
+![Create Listing](assets/screenshots/create-listing.png)
 
 ### Login Page
 
-! [Login] (assets//screenshots/login.png)
+![Login](assets/screenshots/login-page.png)
 
 ---
 
