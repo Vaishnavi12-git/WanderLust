@@ -12,14 +12,14 @@ router
     .route("/")
     .get( wrapAsync(listingController.index))
     .post(
-        isLoggedIn, 
-        validateListing, 
-        upload.single("listing[image]"),
         (req, res, next) => {
             console.log("🔥 POST /listings REACHED");
             console.log("🔥 FILE:", req.file);
             next();
         },
+        isLoggedIn, 
+        upload.single("listing[image]"),
+        validateListing, 
         wrapAsync(listingController.createNewListing)
 );
 
