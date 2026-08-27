@@ -12,11 +12,6 @@ router
     .route("/")
     .get( wrapAsync(listingController.index))
     .post(
-        (req, res, next) => {
-            console.log("🔥 POST /listings REACHED");
-            console.log("🔥 FILE:", req.file);
-            next();
-        },
         isLoggedIn, 
         upload.single("listing[image]"),
         validateListing, 

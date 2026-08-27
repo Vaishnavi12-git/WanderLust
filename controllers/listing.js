@@ -39,13 +39,8 @@ module.exports.createNewListing = async (req, res, next) => {
         }
         );
 
-        console.log("UPLOADED FILE:", req.file);
-
         let url = req.file.path;
         let filename = req.file.filename;
-
-        console.log("URL:", url);
-        console.log("FILENAME:", filename);
 
         const newListing = new Listing(req.body.listing);
         newListing.owner = req.user._id;
